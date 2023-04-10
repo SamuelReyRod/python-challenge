@@ -32,30 +32,26 @@ with open(csvpath, 'r') as csvfile:
     highScore = 0
     winner = ''
     
+    print("Total Votes: {}".format(votes))
+    print("\n\n------------------------------------------------\n\n")
+    
     for candidate in candidate_vote_count:
-        
-        print(candidate, candidate_vote_count[candidate], candidate_vote_count[candidate] / votes * 100)  
-        
+                
+        print(candidate + ":",   str(round((candidate_vote_count[candidate] / votes* 100),3))+"%", "(" + str(candidate_vote_count[candidate])+")", '\n\n') 
+                
         score = candidate_vote_count[candidate] / votes * 100
         
         if score > highScore:
             highScore = score
             winner = candidate
         
-    print(winner)
-            
-            
-            
-            
-            
-            
-            
-            
-        
-    print("Total Votes: {}".format(votes))
-    #print(candidates)
-    print(candidate_vote_count)
     
+    # print(candidate, candidate_vote_count[candidate], candidate_vote_count[candidate] / votes * 100)
+    print("------------------------------------------------")
+    print('\n\nWinner is:', winner)
+    
+    
+    #formatted_percent = "{:.2%}".format(percent)
     
 
 
